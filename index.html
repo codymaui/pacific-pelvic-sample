@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pacific Pelvic Health — Sample Redesign</title>
+  <meta name="description" content="Personalized pelvic floor physical therapy on Maui, HI. A refined sample redesign for Pacific Pelvic Health." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #152428;
+      --ink-soft: #3a4d52;
+      --mist: #eef3f2;
+      --foam: #f7faf9;
+      --sea: #1f4f55;
+      --sea-mid: #2f6a70;
+      --lagoon: #7aa8a6;
+      --sand: #d9c7b0;
+      --paper: #ffffff;
+      --line: rgba(21, 36, 40, 0.12);
+      --font-display: "Fraunces", Georgia, serif;
+      --font-sans: "Sora", system-ui, sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(122,168,166,0.18), transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, rgba(217,199,176,0.22), transparent 55%),
+        var(--foam);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .sample-banner {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--ink);
+      color: rgba(247,250,249,0.88);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-align: center;
+      padding: 8px 16px;
+    }
+    .sample-banner strong { color: #fff; font-weight: 500; }
+
+    .nav {
+      position: absolute;
+      top: 36px;
+      left: 0; right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px clamp(18px, 4vw, 40px);
+      color: #f7faf9;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .nav-brand span {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-top: 2px;
+      font-weight: 400;
+    }
+    .nav-cta {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 12px 18px;
+      border: 1px solid rgba(247,250,249,0.45);
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s;
+    }
+    .nav-cta:hover {
+      background: #f7faf9;
+      color: var(--ink);
+      border-color: #f7faf9;
+    }
+
+    /* HERO — one composition, brand-first, full-bleed */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      color: #f7faf9;
+      overflow: hidden;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      transform: scale(1.04);
+      animation: heroSettle 2.4s var(--ease) both;
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(15,28,31,0.88) 0%, rgba(15,28,31,0.35) 42%, rgba(15,28,31,0.18) 100%);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(920px, 100%);
+      padding: 0 clamp(20px, 5vw, 48px) clamp(48px, 8vh, 88px);
+      animation: rise 1.1s var(--ease) 0.15s both;
+    }
+    .hero-brand {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 8vw, 78px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .hero-brand em {
+      font-style: italic;
+      font-weight: 400;
+      opacity: 0.92;
+    }
+    .hero-lead {
+      max-width: 34ch;
+      font-size: clamp(15px, 2vw, 18px);
+      font-weight: 300;
+      color: rgba(247,250,249,0.82);
+      margin-bottom: 28px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 22px;
+      transition: transform 0.25s var(--ease), background 0.25s, color 0.25s, border-color 0.25s;
+    }
+    .btn-primary {
+      background: #f7faf9;
+      color: var(--ink);
+    }
+    .btn-primary:hover { transform: translateY(-1px); background: #fff; }
+    .btn-ghost {
+      border: 1px solid rgba(247,250,249,0.4);
+      color: #f7faf9;
+    }
+    .btn-ghost:hover { border-color: #f7faf9; }
+
+    .section {
+      padding: clamp(64px, 10vw, 112px) clamp(20px, 5vw, 48px);
+    }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sea-mid);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+      margin-bottom: 18px;
+    }
+    .section-title em { font-style: italic; font-weight: 400; }
+    .section-copy {
+      max-width: 42ch;
+      color: var(--ink-soft);
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(32px, 6vw, 80px);
+      align-items: end;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .intro-aside {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      font-weight: 300;
+    }
+    .intro-aside strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .paths {
+      background:
+        linear-gradient(180deg, rgba(31,79,85,0.06), transparent 40%),
+        var(--mist);
+    }
+    .paths-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .path {
+      background: var(--paper);
+      padding: clamp(28px, 4vw, 40px);
+      border: 1px solid rgba(21,36,40,0.06);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+    .path:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(21,36,40,0.08);
+    }
+    .path-num {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lagoon);
+      margin-bottom: 18px;
+    }
+    .path h3 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .path p {
+      color: var(--ink-soft);
+      font-weight: 300;
+      font-size: 15px;
+      max-width: 34ch;
+    }
+    .path a {
+      margin-top: 28px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sea);
+      border-bottom: 1px solid rgba(31,79,85,0.3);
+      padding-bottom: 4px;
+      align-self: flex-start;
+    }
+
+    .treat {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .treat-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 40px;
+    }
+    .treat-item {
+      background: var(--foam);
+      padding: 28px 24px;
+    }
+    .treat-item h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .treat-item p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      font-weight: 300;
+    }
+
+    .voices {
+      background: var(--sea);
+      color: #f3f8f7;
+    }
+    .voices .section-label { color: var(--lagoon); }
+    .voices .section-title { color: #f7faf9; max-width: 14ch; }
+    .voices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+      max-width: 1180px;
+    }
+    .quote {
+      border-top: 1px solid rgba(247,250,249,0.2);
+      padding-top: 22px;
+    }
+    .quote p {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 400;
+      line-height: 1.35;
+      margin-bottom: 18px;
+    }
+    .quote cite {
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    .cta {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .cta-panel {
+      background: var(--ink);
+      color: #f7faf9;
+      padding: clamp(32px, 5vw, 48px);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image:
+        radial-gradient(600px 280px at 100% 0%, rgba(122,168,166,0.28), transparent 60%);
+    }
+    .cta-panel h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 500;
+      line-height: 1.05;
+      max-width: 10ch;
+    }
+    .cta-panel p {
+      margin: 16px 0 28px;
+      color: rgba(247,250,249,0.72);
+      font-weight: 300;
+      max-width: 32ch;
+    }
+    .cta-meta {
+      font-size: 14px;
+      color: var(--ink-soft);
+      font-weight: 300;
+    }
+    .cta-meta a {
+      color: var(--sea);
+      border-bottom: 1px solid rgba(31,79,85,0.25);
+    }
+    .cta-meta div + div { margin-top: 10px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px clamp(20px, 5vw, 48px) 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+    footer .mark {
+      font-family: var(--font-display);
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    @keyframes heroSettle {
+      from { transform: scale(1.08); }
+      to { transform: scale(1.04); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .intro, .paths-grid, .cta, .voices-grid { grid-template-columns: 1fr; }
+      .treat-list { grid-template-columns: 1fr; }
+      .hero { min-height: 92svh; }
+      .nav-brand span { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sample-banner">Sample redesign for <strong>Pacific Pelvic Health</strong> · not the live site</div>
+
+  <header class="nav">
+    <a class="nav-brand" href="#top">Pacific Pelvic Health<span>Maui, Hawaiʻi</span></a>
+    <a class="nav-cta" href="https://www.pacificpelvic.com" target="_blank" rel="noopener">Request Appointment</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Pacific Pelvic Health">
+      <div class="hero-media">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/6518b94a8dc2e10255f3cf27/e6432768-98bf-4178-8f50-bf0a3bd29593/_MG_9409.jpg?format=2500w"
+          alt="Pacific Pelvic Health — calm care on Maui"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <div class="hero-inner">
+        <h1 class="hero-brand">Pacific<br />Pelvic <em>Health</em></h1>
+        <p class="hero-lead">Personalized pelvic floor physical therapy — so you can move through life with lasting relief and real resiliency.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.pacificpelvic.com" target="_blank" rel="noopener">Start healing</a>
+          <a class="btn btn-ghost" href="#care">How we work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="intro">
+        <div>
+          <p class="section-label">The practice</p>
+          <h2 class="section-title">Care that listens before it <em>treats</em>.</h2>
+          <p class="section-copy">We facilitate individualized healing for people struggling with pelvic floor issues — lasting symptom relief, a more resilient body, and the freedom to stay active in life, community, and family.</p>
+        </div>
+        <aside class="intro-aside">
+          <strong>Anya · Pelvic Floor PT</strong>
+          In-clinic care in Central Maui, with online wellness coaching when you can’t make it in.
+        </aside>
+      </div>
+    </section>
+
+    <section class="section paths" id="care">
+      <div class="paths-inner">
+        <p class="section-label">Work with us</p>
+        <h2 class="section-title">Two ways to begin.</h2>
+        <div class="paths-grid">
+          <article class="path">
+            <div>
+              <p class="path-num">01 · In clinic</p>
+              <h3>Maui pelvic floor physical therapy</h3>
+              <p>Specialized, one-to-one care in a calm therapeutic space — ideal if you’re on Maui and ready for hands-on, individualized treatment.</p>
+            </div>
+            <a href="https://www.pacificpelvic.com" target="_blank" rel="noopener">Learn more</a>
+          </article>
+          <article class="path">
+            <div>
+              <p class="path-num">02 · Online</p>
+              <h3>1:1 pelvic floor wellness coaching</h3>
+              <p>For those who can’t come in, need a second opinion, or want to fill the gaps in care already underway — guided from wherever you are.</p>
+            </div>
+            <a href="https://www.pacificpelvic.com" target="_blank" rel="noopener">Learn more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="treat">
+        <p class="section-label">What we treat</p>
+        <h2 class="section-title">Support for the whole <em>story</em>.</h2>
+        <div class="treat-list">
+          <div class="treat-item">
+            <h3>Pregnancy &amp; postpartum</h3>
+            <p>Preparation, recovery, and strength through the seasons of birth.</p>
+          </div>
+          <div class="treat-item">
+            <h3>Pelvic pain &amp; dysfunction</h3>
+            <p>Targeted care for lasting relief — not one-size-fits-all protocols.</p>
+          </div>
+          <div class="treat-item">
+            <h3>Athletic return</h3>
+            <p>Reconnect to your body with plans that respect real life and real goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voices">
+      <p class="section-label">Patient voices</p>
+      <h2 class="section-title">Trusted, thorough, <em>human</em>.</h2>
+      <div class="voices-grid">
+        <figure class="quote">
+          <p>“I saw her during both pregnancy and postpartum, and truly credit her for helping me have a smooth birth and easier recovery.”</p>
+          <cite>TH</cite>
+        </figure>
+        <figure class="quote">
+          <p>“Having seen every pelvic floor therapist on Maui, I can confidently say Anya is by far the best.”</p>
+          <cite>EB</cite>
+        </figure>
+        <figure class="quote">
+          <p>“From the first session I felt safe, respected, and confident in her care. Treatment felt personal and effective.”</p>
+          <cite>AW</cite>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <div>
+          <p class="section-label">Visit</p>
+          <h2 class="section-title">Central Maui, by <em>appointment</em>.</h2>
+          <div class="cta-meta">
+            <div>405 Ala Makani Street, Kahului, HI 96732<br />In the building connected to The Underdog Foundation</div>
+            <div><a href="tel:+18085599987">(808) 559-9987</a> · <a href="mailto:hello@pacificpelvic.com">hello@pacificpelvic.com</a></div>
+            <div><a href="https://instagram.com/pacificpelvichealth" target="_blank" rel="noopener">@pacificpelvichealth</a></div>
+          </div>
+        </div>
+        <div class="cta-panel">
+          <div>
+            <h2>Ready to start healing?</h2>
+            <p>Request an appointment and we’ll help you find the right path — in clinic or online.</p>
+          </div>
+          <a class="btn btn-primary" href="https://www.pacificpelvic.com" target="_blank" rel="noopener">Request Appointment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="mark">Pacific Pelvic Health</div>
+    <div>Sample redesign · content adapted from <a href="https://www.pacificpelvic.com" target="_blank" rel="noopener">pacificpelvic.com</a></div>
+  </footer>
+</body>
+</html>
