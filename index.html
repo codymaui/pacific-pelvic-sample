@@ -16,7 +16,7 @@
 
   <div class="nav-drawer-backdrop" id="navBackdrop" hidden></div>
   <header class="nav" id="nav">
-    <a class="nav-brand" href="#top" aria-label="Pacific Pelvic Health — home">
+    <a class="nav-brand" href="index.html" aria-label="Pacific Pelvic Health — home">
       <img class="nav-brand-mark" src="assets/pph-mark.png" alt="" width="48" height="39" decoding="async" />
       <img class="nav-brand-word" src="assets/pph-wordmark.png" alt="Pacific Pelvic Health" width="92" height="40" decoding="async" />
     </a>
@@ -63,32 +63,35 @@
       </div>
     </section>
 
-    <section class="section" id="team">
-      <div class="section-inner intro">
-        <div class="intro-copy">
-          <p class="section-label">The practice</p>
-          <h2 class="section-title">Feel heard. Have <em>time</em>.</h2>
-          <p class="section-copy">We facilitate individualized healing to all people struggling with pelvic floor issues to find lasting relief in their symptoms and resiliency in their body so they can be active in their lifestyle, communities, and with their family.</p>
-          <p class="section-copy" style="margin-top:14px;">We know what it’s like to feel vulnerable, fearful, and unheard by medical professionals. Our mission is to ensure all people feel like the leader of their care team, while we take a supportive and guiding role where it’s needed.</p>
+    <section class="section team-feature" id="team">
+      <div class="section-inner">
+        <header class="team-feature-head">
+          <p class="section-label">Your care team</p>
+          <h2 class="section-title">The doctors behind care that feels <em>personal</em>.</h2>
+          <p class="section-copy">Feel heard. Have time. Tap a portrait to read more about Anya and Keely — the pelvic floor specialists guiding your care in clinic and online.</p>
+        </header>
+
+        <div class="team-feature-grid" id="doctorTeam">
+          <button type="button" class="doc-card" data-doc="0" aria-haspopup="dialog">
+            <div class="doc-card-media">
+              <img src="assets/team/8G6A6624.jpg" alt="Dr. Anya Vierra, DPT, CSCS" loading="lazy" decoding="async" />
+            </div>
+            <div class="doc-card-name">Dr. Anya Vierra<span class="doc-card-role">DPT, CSCS · Founder</span></div>
+            <span class="doc-card-hint">Read bio</span>
+          </button>
+          <button type="button" class="doc-card" data-doc="1" aria-haspopup="dialog">
+            <div class="doc-card-media">
+              <img src="assets/team/8G6A6315.jpg" alt="Dr. Keely Takayama, DPT, PCES" loading="lazy" decoding="async" />
+            </div>
+            <div class="doc-card-name">Dr. Keely Takayama<span class="doc-card-role">DPT, PCES</span></div>
+            <span class="doc-card-hint">Read bio</span>
+          </button>
         </div>
-        <div class="intro-visual">
-          <div class="intro-team" id="doctorTeam">
-            <button type="button" class="doc-card" data-doc="0" aria-haspopup="dialog">
-              <div class="doc-card-media">
-                <img src="assets/team/8G6A6624.jpg" alt="Dr. Anya Vierra, DPT, CSCS" loading="lazy" decoding="async" />
-              </div>
-              <div class="doc-card-name">Dr. Anya Vierra<span class="doc-card-role">DPT, CSCS · Founder</span></div>
-              <span class="doc-card-hint">Read bio</span>
-            </button>
-            <button type="button" class="doc-card" data-doc="1" aria-haspopup="dialog">
-              <div class="doc-card-media">
-                <img src="assets/team/8G6A6315.jpg" alt="Dr. Keely Takayama, DPT, PCES" loading="lazy" decoding="async" />
-              </div>
-              <div class="doc-card-name">Dr. Keely Takayama<span class="doc-card-role">DPT, PCES</span></div>
-              <span class="doc-card-hint">Read bio</span>
-            </button>
-          </div>
-          <aside class="intro-aside">In-clinic care in Central Maui, with 1:1 online pelvic floor wellness coaching when you can’t come in. Tap a doctor to read more.</aside>
+
+        <div class="team-feature-copy">
+          <p>We facilitate individualized healing for people struggling with pelvic floor issues — lasting relief in symptoms and resiliency in the body, so you can stay active in your lifestyle, communities, and with your family.</p>
+          <p>We know what it’s like to feel vulnerable, fearful, and unheard. Our mission is to ensure you feel like the leader of your care team, while we take a supportive and guiding role where it’s needed.</p>
+          <p class="team-feature-note">In-clinic care in Central Maui, with 1:1 online pelvic floor wellness coaching when you can’t come in.</p>
         </div>
       </div>
     </section>
@@ -320,9 +323,10 @@
   </footer>
 
   <div class="doc-lightbox" id="docLightbox" aria-hidden="true">
-    <div class="doc-lightbox-backdrop" data-close="true"></div>
-    <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="docLightboxTitle" tabindex="-1">
-      <button type="button" class="doc-lightbox-close" data-close="true" aria-label="Close bio">×</button>
+    <div class="doc-lightbox-backdrop" data-close></div>
+    <div class="doc-lightbox-shell">
+      <button type="button" class="doc-lightbox-close" data-close aria-label="Close bio">×</button>
+      <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="docLightboxTitle" tabindex="-1">
       <button type="button" class="doc-lightbox-nav is-prev" data-doc-nav="-1" aria-label="Previous doctor">‹</button>
       <button type="button" class="doc-lightbox-nav is-next" data-doc-nav="1" aria-label="Next doctor">›</button>
       <div class="doc-lightbox-handle" aria-hidden="true"><span></span></div>
@@ -356,13 +360,15 @@
         <button type="button" class="doc-lightbox-dot is-active" data-index="0" aria-label="Dr. Anya Vierra"></button>
         <button type="button" class="doc-lightbox-dot" data-index="1" aria-label="Dr. Keely Takayama"></button>
       </div>
+      </div>
     </div>
   </div>
 
   <div class="doc-lightbox voice-lightbox" id="voiceLightbox" aria-hidden="true">
-    <div class="doc-lightbox-backdrop" data-close="true"></div>
-    <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="voiceLightboxTitle" tabindex="-1">
-      <button type="button" class="doc-lightbox-close" data-close="true" aria-label="Close review">×</button>
+    <div class="doc-lightbox-backdrop" data-close></div>
+    <div class="doc-lightbox-shell">
+      <button type="button" class="doc-lightbox-close" data-close aria-label="Close review">×</button>
+      <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="voiceLightboxTitle" tabindex="-1">
       <button type="button" class="doc-lightbox-nav is-prev" data-voice-nav="-1" aria-label="Previous review">‹</button>
       <button type="button" class="doc-lightbox-nav is-next" data-voice-nav="1" aria-label="Next review">›</button>
       <div class="doc-lightbox-handle" aria-hidden="true"><span></span></div>
@@ -408,13 +414,15 @@
         <button type="button" class="doc-lightbox-dot" data-index="4" aria-label="Review 5"></button>
         <button type="button" class="doc-lightbox-dot" data-index="5" aria-label="Review 6"></button>
       </div>
+      </div>
     </div>
   </div>
 
   <div class="doc-lightbox place-lightbox" id="placeLightbox" aria-hidden="true">
-    <div class="doc-lightbox-backdrop" data-close="true"></div>
-    <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-label="Clinic photos" tabindex="-1">
-      <button type="button" class="doc-lightbox-close" data-close="true" aria-label="Close photo">×</button>
+    <div class="doc-lightbox-backdrop" data-close></div>
+    <div class="doc-lightbox-shell">
+      <button type="button" class="doc-lightbox-close" data-close aria-label="Close photo">×</button>
+      <div class="doc-lightbox-panel" role="dialog" aria-modal="true" aria-label="Clinic photos" tabindex="-1">
       <button type="button" class="doc-lightbox-nav is-prev" data-carousel-nav="-1" aria-label="Previous photo">‹</button>
       <button type="button" class="doc-lightbox-nav is-next" data-carousel-nav="1" aria-label="Next photo">›</button>
       <div class="doc-lightbox-viewport">
@@ -439,12 +447,53 @@
         <button type="button" class="doc-lightbox-dot" data-index="2" aria-label="Photo 3"></button>
         <button type="button" class="doc-lightbox-dot" data-index="3" aria-label="Photo 4"></button>
       </div>
+      </div>
     </div>
   </div>
 
   <script src="site-nav.js"></script>
   <script>
     (function () {
+      let scrollLockY = 0;
+      let scrollLocks = 0;
+      let reopenBlockedUntil = 0;
+
+      function lockPageScroll() {
+        if (scrollLocks === 0) {
+          scrollLockY = window.scrollY || document.documentElement.scrollTop || 0;
+          document.documentElement.classList.add('doc-lightbox-open');
+          document.body.classList.add('doc-lightbox-open');
+          document.body.style.top = '-' + scrollLockY + 'px';
+        }
+        scrollLocks += 1;
+      }
+
+      function unlockPageScroll() {
+        scrollLocks = Math.max(0, scrollLocks - 1);
+        if (scrollLocks > 0) return;
+        const y = scrollLockY;
+        document.documentElement.classList.remove('doc-lightbox-open');
+        document.body.classList.remove('doc-lightbox-open');
+        document.body.style.removeProperty('top');
+        window.scrollTo(0, y);
+        requestAnimationFrame(() => window.scrollTo(0, y));
+        setTimeout(() => window.scrollTo(0, y), 50);
+      }
+
+      function blockClickThrough() {
+        reopenBlockedUntil = Date.now() + 450;
+        const shield = (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+        };
+        document.addEventListener('click', shield, true);
+        document.addEventListener('touchend', shield, true);
+        setTimeout(() => {
+          document.removeEventListener('click', shield, true);
+          document.removeEventListener('touchend', shield, true);
+        }, 450);
+      }
+
       function createCarousel(options) {
         const lightbox = document.getElementById(options.id);
         if (!lightbox) return null;
@@ -465,9 +514,14 @@
         let deltaY = 0;
         let gesturing = false;
         let axis = null;
+        let moved = false;
 
         track.style.width = (total * 100) + '%';
         slides.forEach((slide) => { slide.style.width = (100 / total) + '%'; });
+
+        function activeSlide() {
+          return slides[index] || null;
+        }
 
         function syncNav() {
           navBtns.forEach((btn) => {
@@ -486,33 +540,56 @@
           track.style.transform = 'translate3d(' + (-index * step) + '%, 0, 0)';
           dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
           syncNav();
+          const slide = activeSlide();
+          if (slide) slide.scrollTop = 0;
           if (!animate) requestAnimationFrame(() => track.classList.remove('is-swiping'));
         }
 
         function openAt(i) {
+          if (Date.now() < reopenBlockedUntil) return;
           lastFocus = document.activeElement;
           setIndex(i, false);
           lightbox.classList.add('is-open');
           lightbox.setAttribute('aria-hidden', 'false');
-          document.body.classList.add('doc-lightbox-open');
-          panel.focus({ preventScroll: true });
+          lockPageScroll();
+          try { panel.focus({ preventScroll: true }); } catch (_) {}
         }
 
-        function close() {
+        function close(e) {
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
           if (!lightbox.classList.contains('is-open')) return;
+          gesturing = false;
+          axis = null;
+          moved = false;
           lightbox.classList.remove('is-open');
           lightbox.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('doc-lightbox-open');
           panel.style.transform = '';
           lightbox.style.opacity = '';
           panel.classList.remove('is-dragging');
           track.classList.remove('is-swiping');
-          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus({ preventScroll: true });
+          blockClickThrough();
+          unlockPageScroll();
+          lastFocus = null;
         }
 
-        lightbox.addEventListener('click', (e) => {
-          if (e.target && e.target.closest('[data-close]')) close();
-        });
+        function bindClose(el) {
+          if (!el) return;
+          const fire = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
+            close(e);
+          };
+          // pointerdown is the most reliable close signal on iOS Safari.
+          el.addEventListener('pointerdown', fire, true);
+          el.addEventListener('click', fire, true);
+        }
+
+        bindClose(lightbox.querySelector('.doc-lightbox-close'));
+        bindClose(lightbox.querySelector('.doc-lightbox-backdrop'));
 
         dots.forEach((dot) => {
           dot.addEventListener('click', () => setIndex(Number(dot.getAttribute('data-index') || 0), true));
@@ -532,68 +609,114 @@
           if (e.key === 'ArrowLeft') setIndex(index - 1, true);
         });
 
-        function onPointerDown(e) {
+        function pointFromEvent(e) {
+          if (e.touches && e.touches[0]) return e.touches[0];
+          if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0];
+          return e;
+        }
+
+        function onGestureStart(e) {
           if (!lightbox.classList.contains('is-open')) return;
-          if (e.target.closest('[data-close], .doc-lightbox-dot, .doc-lightbox-nav')) return;
-          const point = e.touches ? e.touches[0] : e;
-          startX = point.clientX;
-          startY = point.clientY;
+          if (e.pointerType === 'mouse' && e.button !== 0) return;
+          if (e.target.closest('[data-close], .doc-lightbox-dot, .doc-lightbox-nav, a, button')) return;
+          const p = pointFromEvent(e);
+          startX = p.clientX;
+          startY = p.clientY;
           deltaX = 0;
           deltaY = 0;
           gesturing = true;
+          moved = false;
           axis = null;
         }
 
-        function onPointerMove(e) {
+        function onGestureMove(e) {
           if (!gesturing) return;
-          const point = e.touches ? e.touches[0] : e;
-          deltaX = point.clientX - startX;
-          deltaY = point.clientY - startY;
+          const p = pointFromEvent(e);
+          deltaX = p.clientX - startX;
+          deltaY = p.clientY - startY;
+
           if (!axis) {
-            if (Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8) return;
-            axis = Math.abs(deltaY) > Math.abs(deltaX) ? 'y' : 'x';
-          }
-          if (axis === 'y') {
-            if (deltaY > 0) {
-              if (e.cancelable) e.preventDefault();
-              panel.classList.add('is-dragging');
-              const fade = Math.max(0.35, 1 - deltaY / 420);
-              panel.style.transform = 'translateY(' + deltaY + 'px)';
-              lightbox.style.opacity = String(fade);
+            if (Math.abs(deltaX) < 12 && Math.abs(deltaY) < 12) return;
+            axis = Math.abs(deltaX) > Math.abs(deltaY) * 1.15 ? 'x' : 'y';
+            if (axis === 'y') {
+              // Native iOS scrolling handles the bio. Only hijack horizontal swipes.
+              gesturing = false;
+              axis = null;
+              return;
             }
-          } else if (axis === 'x') {
-            if (e.cancelable) e.preventDefault();
-            track.classList.add('is-swiping');
-            const width = panel.getBoundingClientRect().width || 1;
-            const pct = (-index * step) + (deltaX / width) * step;
-            track.style.transform = 'translate3d(' + pct + '%, 0, 0)';
+            moved = true;
+            panel.classList.add('is-dragging');
           }
+
+          if (axis !== 'x') return;
+          if (e.cancelable) e.preventDefault();
+          track.classList.add('is-swiping');
+          const width = panel.getBoundingClientRect().width || 1;
+          const pct = (-index * step) + (deltaX / width) * step;
+          track.style.transform = 'translate3d(' + pct + '%, 0, 0)';
         }
 
-        function onPointerUp() {
-          if (!gesturing) return;
+        function onGestureEnd() {
+          if (!gesturing && axis !== 'x') {
+            gesturing = false;
+            axis = null;
+            return;
+          }
+          const wasX = axis === 'x';
           gesturing = false;
-          if (axis === 'y') {
-            panel.classList.remove('is-dragging');
-            lightbox.style.opacity = '';
-            if (deltaY > 110) close();
-            else panel.style.transform = '';
-          } else if (axis === 'x') {
+          panel.classList.remove('is-dragging');
+
+          if (wasX) {
             const width = panel.getBoundingClientRect().width || 1;
-            const threshold = width * 0.18;
+            const threshold = Math.max(48, width * 0.14);
             if (deltaX <= -threshold) setIndex(index + 1, true);
             else if (deltaX >= threshold) setIndex(index - 1, true);
             else setIndex(index, true);
           }
+
+          if (moved) {
+            const blockClick = (ev) => {
+              ev.preventDefault();
+              ev.stopPropagation();
+              panel.removeEventListener('click', blockClick, true);
+            };
+            panel.addEventListener('click', blockClick, true);
+          }
+
           axis = null;
           deltaX = 0;
           deltaY = 0;
+          moved = false;
         }
 
-        panel.addEventListener('touchstart', onPointerDown, { passive: true });
-        panel.addEventListener('touchmove', onPointerMove, { passive: false });
-        panel.addEventListener('touchend', onPointerUp);
-        panel.addEventListener('touchcancel', onPointerUp);
+        panel.addEventListener('touchstart', onGestureStart, { passive: true });
+        panel.addEventListener('touchmove', onGestureMove, { passive: false });
+        panel.addEventListener('touchend', onGestureEnd);
+        panel.addEventListener('touchcancel', onGestureEnd);
+
+        panel.addEventListener('pointerdown', (e) => {
+          if (e.pointerType === 'touch') return;
+          onGestureStart(e);
+          try { panel.setPointerCapture(e.pointerId); } catch (_) {}
+        });
+        panel.addEventListener('pointermove', (e) => {
+          if (e.pointerType === 'touch') return;
+          onGestureMove(e);
+        });
+        panel.addEventListener('pointerup', (e) => {
+          if (e.pointerType === 'touch') return;
+          onGestureEnd();
+        });
+        panel.addEventListener('pointercancel', (e) => {
+          if (e.pointerType === 'touch') return;
+          onGestureEnd();
+        });
+
+        document.addEventListener('touchmove', (e) => {
+          if (!lightbox.classList.contains('is-open')) return;
+          if (!panel.contains(e.target) && e.cancelable) e.preventDefault();
+        }, { passive: false });
+
         syncNav();
         return { openAt, close };
       }
